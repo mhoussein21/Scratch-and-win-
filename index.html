@@ -96,7 +96,9 @@ body{
 }
 
 
-/* WHEEL */
+/* =========================
+   WHEEL
+========================= */
 
 .wheel-container{
     position:relative;
@@ -146,7 +148,9 @@ body{
 }
 
 
-/* OPTIONS */
+/* =========================
+   OPTIONS
+========================= */
 
 .option{
     position:absolute;
@@ -249,7 +253,9 @@ body{
 }
 
 
-/* BUTTON */
+/* =========================
+   SPIN BUTTON
+========================= */
 
 .spin-button{
     border:none;
@@ -274,7 +280,9 @@ body{
 }
 
 
-/* RESULT */
+/* =========================
+   RESULT
+========================= */
 
 .panel{
     display:none;
@@ -294,13 +302,15 @@ body{
 }
 
 .winner-prize{
-    font-size:29px;
+    font-size:34px;
     color:#006b3c;
     font-weight:900;
 }
 
 
-/* VERIFICATION */
+/* =========================
+   VERIFICATION
+========================= */
 
 .verification-box{
     background:#f1f1f1;
@@ -318,6 +328,7 @@ body{
     margin-top:8px;
 
     font-size:21px;
+
     font-weight:900;
 
     letter-spacing:1px;
@@ -328,12 +339,15 @@ body{
 }
 
 
-/* WHATSAPP */
+/* =========================
+   WHATSAPP
+========================= */
 
 .whatsapp{
     display:inline-block;
 
     background:#25D366;
+
     color:white;
 
     padding:15px 22px;
@@ -348,12 +362,15 @@ body{
 }
 
 
-/* REVEAL */
+/* =========================
+   REVEAL
+========================= */
 
 .reveal-button{
     border:none;
 
     background:#006b3c;
+
     color:white;
 
     padding:14px 24px;
@@ -368,7 +385,9 @@ body{
 }
 
 
-/* PRIZES */
+/* =========================
+   PRIZES
+========================= */
 
 .prizes{
     display:grid;
@@ -415,7 +434,9 @@ body{
 <div class="container">
 
 
-<!-- MAIN -->
+<!-- =========================
+     MAIN SECTION
+========================= -->
 
 <div class="hero">
 
@@ -469,7 +490,9 @@ how would you ask me?
 
 
 
-<!-- WHEEL -->
+<!-- =========================
+     WHEEL
+========================= -->
 
 <div class="wheel-container">
 
@@ -529,7 +552,9 @@ onclick="spinWheel()"
 
 
 
-<!-- WINNER -->
+<!-- =========================
+     WINNER
+========================= -->
 
 <div
 id="winner"
@@ -547,12 +572,12 @@ The wheel has stopped!
 
 
 <div class="winner-prize">
-🎤 ANSWER LIVE QUESTION
+🏆 ₦1,000
 </div>
 
 
 <p>
-You landed on <b>ANSWER LIVE QUESTION</b>!
+You landed on <b>₦1,000</b>!
 </p>
 
 
@@ -605,7 +630,9 @@ onclick="revealAll()"
 
 
 
-<!-- ALL PRIZES -->
+<!-- =========================
+     ALL PRIZES
+========================= -->
 
 <div
 id="allPrizes"
@@ -621,26 +648,46 @@ class="panel"
 
 
 <div class="prize">
-<strong>₦1,000</strong>
+
+<strong>
+₦1,000
+</strong>
+
 💰 Cash Prize
+
 </div>
 
 
 <div class="prize">
-<strong>LIVE</strong>
+
+<strong>
+LIVE
+</strong>
+
 🎤 Answer Live Question
+
 </div>
 
 
 <div class="prize">
-<strong>₦200</strong>
+
+<strong>
+₦200
+</strong>
+
 🎁 Cash Prize
+
 </div>
 
 
 <div class="prize">
-<strong>❓</strong>
+
+<strong>
+❓
+</strong>
+
 Answer Another Question
+
 </div>
 
 
@@ -648,7 +695,10 @@ Answer Another Question
 
 
 <p class="small">
-Madobi Campus Gist • Stay Informed • Stay Connected
+
+Madobi Campus Gist •
+Stay Informed • Stay Connected
+
 </p>
 
 </div>
@@ -685,7 +735,7 @@ I participated in Spin & Win Question #2.
 
 My verification code is: MDB/MH/#2IhNC
 
-And my spin stop at ANSWER LIVE QUESTION`;
+And my spin stop at ₦1,000`;
 
 
 document.getElementById(
@@ -711,6 +761,7 @@ function spinWheel(){
         return;
     }
 
+
     spinning = true;
 
 
@@ -724,18 +775,22 @@ function spinWheel(){
 
 
     /*
-       ANSWER LIVE QUESTION
-       is the SECOND section.
+       ₦1,000 is the FIRST section.
 
-       Its center is at 135°.
+       The center of the ₦1,000
+       section is at 45°.
 
-       To bring its center to the
-       fixed pointer:
+       The fixed pointer is at 0°.
 
-       360° - 135° = 225°
+       Therefore:
 
-       So we make 6 full rotations
-       + 225°.
+       360° - 45° = 315°
+
+       We add six complete rotations
+       for the spinning effect.
+
+       Final result:
+       ₦1,000 stops under the pointer.
     */
 
     const fullSpins =
@@ -743,7 +798,7 @@ function spinWheel(){
 
 
     const winningAngle =
-        225;
+        315;
 
 
     const finalAngle =
@@ -756,6 +811,11 @@ function spinWheel(){
         finalAngle +
         "deg)";
 
+
+    /*
+       Wait for the 5-second
+       wheel animation to finish.
+    */
 
     setTimeout(function(){
 
@@ -778,7 +838,7 @@ function spinWheel(){
 
 
 /* =========================
-   REVEAL ALL
+   REVEAL ALL PRIZES
 ========================= */
 
 function revealAll(){
