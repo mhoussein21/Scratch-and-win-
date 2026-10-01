@@ -7,7 +7,6 @@
 <title>Madobi Campus Gist - Spin & Win #2</title>
 
 <style>
-
 *{
     box-sizing:border-box;
 }
@@ -97,9 +96,7 @@ body{
 }
 
 
-/* =========================
-   WHEEL
-========================= */
+/* WHEEL */
 
 .wheel-container{
     position:relative;
@@ -113,7 +110,6 @@ body{
     z-index:30;
     top:-12px;
     left:50%;
-
     transform:translateX(-50%);
 
     width:0;
@@ -128,14 +124,11 @@ body{
 
 .wheel{
     position:relative;
-
     width:320px;
     height:320px;
 
     border-radius:50%;
-
     border:9px solid white;
-
     overflow:hidden;
 
     box-shadow:0 8px 25px #0006;
@@ -153,9 +146,7 @@ body{
 }
 
 
-/* =========================
-   OPTIONS
-========================= */
+/* OPTIONS */
 
 .option{
     position:absolute;
@@ -169,7 +160,6 @@ body{
     transform-origin:50% 100%;
 
     display:flex;
-
     justify-content:center;
     align-items:center;
 
@@ -232,7 +222,6 @@ body{
 
 .center{
     position:absolute;
-
     z-index:10;
 
     width:70px;
@@ -244,9 +233,7 @@ body{
     transform:translate(-50%,-50%);
 
     background:white;
-
     border:6px solid #006b3c;
-
     border-radius:50%;
 
     display:flex;
@@ -262,9 +249,7 @@ body{
 }
 
 
-/* =========================
-   BUTTON
-========================= */
+/* BUTTON */
 
 .spin-button{
     border:none;
@@ -289,9 +274,7 @@ body{
 }
 
 
-/* =========================
-   RESULT
-========================= */
+/* RESULT */
 
 .panel{
     display:none;
@@ -299,7 +282,6 @@ body{
     background:white;
 
     margin-top:25px;
-
     padding:25px;
 
     border-radius:20px;
@@ -312,15 +294,13 @@ body{
 }
 
 .winner-prize{
-    font-size:34px;
+    font-size:29px;
     color:#006b3c;
     font-weight:900;
 }
 
 
-/* =========================
-   VERIFICATION
-========================= */
+/* VERIFICATION */
 
 .verification-box{
     background:#f1f1f1;
@@ -338,7 +318,6 @@ body{
     margin-top:8px;
 
     font-size:21px;
-
     font-weight:900;
 
     letter-spacing:1px;
@@ -349,15 +328,12 @@ body{
 }
 
 
-/* =========================
-   WHATSAPP
-========================= */
+/* WHATSAPP */
 
 .whatsapp{
     display:inline-block;
 
     background:#25D366;
-
     color:white;
 
     padding:15px 22px;
@@ -372,15 +348,12 @@ body{
 }
 
 
-/* =========================
-   REVEAL
-========================= */
+/* REVEAL */
 
 .reveal-button{
     border:none;
 
     background:#006b3c;
-
     color:white;
 
     padding:14px 24px;
@@ -395,9 +368,7 @@ body{
 }
 
 
-/* =========================
-   ALL PRIZES
-========================= */
+/* PRIZES */
 
 .prizes{
     display:grid;
@@ -422,7 +393,7 @@ body{
 .prize strong{
     display:block;
 
-    font-size:22px;
+    font-size:20px;
 
     color:#006b3c;
 
@@ -444,22 +415,17 @@ body{
 <div class="container">
 
 
-<!-- =========================
-     MAIN
-========================= -->
+<!-- MAIN -->
 
 <div class="hero">
-
 
 <div class="logo">
 MADOBI CAMPUS GIST
 </div>
 
-
 <div class="subtitle">
 🎡 SPIN & WIN 🎁
 </div>
-
 
 <img
 src="campus.jpg"
@@ -503,9 +469,7 @@ how would you ask me?
 
 
 
-<!-- =========================
-     WHEEL
-========================= -->
+<!-- WHEEL -->
 
 <div class="wheel-container">
 
@@ -561,14 +525,11 @@ onclick="spinWheel()"
 
 </button>
 
-
 </div>
 
 
 
-<!-- =========================
-     WINNER
-========================= -->
+<!-- WINNER -->
 
 <div
 id="winner"
@@ -586,16 +547,14 @@ The wheel has stopped!
 
 
 <div class="winner-prize">
-🏆 ₦1,000
+🎤 ANSWER LIVE QUESTION
 </div>
 
 
 <p>
-You landed on the winning prize!
+You landed on <b>ANSWER LIVE QUESTION</b>!
 </p>
 
-
-<!-- VERIFICATION CODE -->
 
 <div class="verification-box">
 
@@ -612,11 +571,9 @@ MDB/MH/#2IhNC
 
 
 <p>
-
-Send this code to
+Send this message to
 <b>Madobi Campus Gist</b>
-on WhatsApp to claim your token.
-
+on WhatsApp.
 </p>
 
 
@@ -644,14 +601,11 @@ onclick="revealAll()"
 
 </button>
 
-
 </div>
 
 
 
-<!-- =========================
-     ALL PRIZES
-========================= -->
+<!-- ALL PRIZES -->
 
 <div
 id="allPrizes"
@@ -667,46 +621,26 @@ class="panel"
 
 
 <div class="prize">
-
-<strong>
-₦1,000
-</strong>
-
+<strong>₦1,000</strong>
 💰 Cash Prize
-
 </div>
 
 
 <div class="prize">
-
-<strong>
-LIVE
-</strong>
-
+<strong>LIVE</strong>
 🎤 Answer Live Question
-
 </div>
 
 
 <div class="prize">
-
-<strong>
-₦200
-</strong>
-
+<strong>₦200</strong>
 🎁 Cash Prize
-
 </div>
 
 
 <div class="prize">
-
-<strong>
-❓
-</strong>
-
+<strong>❓</strong>
 Answer Another Question
-
 </div>
 
 
@@ -714,14 +648,10 @@ Answer Another Question
 
 
 <p class="small">
-
-Madobi Campus Gist •
-Stay Informed • Stay Connected
-
+Madobi Campus Gist • Stay Informed • Stay Connected
 </p>
 
 </div>
-
 
 </div>
 
@@ -745,26 +675,23 @@ viewerCode;
 
 
 /* =========================
-   WHATSAPP
+   WHATSAPP MESSAGE
 ========================= */
 
 const whatsappMessage =
+`Hello Madobi Campus Gist 👋
 
-"Hello Madobi Campus Gist 👋\n\n" +
+I participated in Spin & Win Question #2.
 
-"I participated in Spin & Win Question #2.\n\n" +
+My verification code is: MDB/MH/#2IhNC
 
-"My verification code is: " +
-
-viewerCode;
+And my spin stop at ANSWER LIVE QUESTION`;
 
 
 document.getElementById(
 "whatsappButton"
 ).href =
-
 "https://wa.me/2349040288121?text=" +
-
 encodeURIComponent(
 whatsappMessage
 );
@@ -772,7 +699,7 @@ whatsappMessage
 
 
 /* =========================
-   SPIN
+   SPIN WHEEL
 ========================= */
 
 let spinning = false;
@@ -784,68 +711,65 @@ function spinWheel(){
         return;
     }
 
-
     spinning = true;
 
 
     document
-    .getElementById("spinButton")
-    .disabled = true;
+        .getElementById("spinButton")
+        .disabled = true;
 
 
     const wheel =
-    document.getElementById("wheel");
+        document.getElementById("wheel");
 
 
     /*
-       ₦1,000 is the first
-       90-degree section.
+       ANSWER LIVE QUESTION
+       is the SECOND section.
 
-       Its center is 45°.
+       Its center is at 135°.
 
-       360° - 45° = 315°
+       To bring its center to the
+       fixed pointer:
 
-       Therefore the wheel makes
-       six complete rotations plus
-       315°.
+       360° - 135° = 225°
 
-       Result:
-       ₦1,000 stops directly
-       underneath the fixed pointer.
+       So we make 6 full rotations
+       + 225°.
     */
 
-
     const fullSpins =
-    6 * 360;
+        6 * 360;
 
 
     const winningAngle =
-    315;
+        225;
 
 
     const finalAngle =
-    fullSpins +
-    winningAngle;
+        fullSpins +
+        winningAngle;
 
 
     wheel.style.transform =
-    "rotate(" +
-    finalAngle +
-    "deg)";
+        "rotate(" +
+        finalAngle +
+        "deg)";
 
 
     setTimeout(function(){
 
         document
-        .getElementById("winner")
-        .style.display = "block";
+            .getElementById("winner")
+            .style.display =
+            "block";
 
 
         document
-        .getElementById("winner")
-        .scrollIntoView({
-            behavior:"smooth"
-        });
+            .getElementById("winner")
+            .scrollIntoView({
+                behavior:"smooth"
+            });
 
     },5200);
 
@@ -860,19 +784,20 @@ function spinWheel(){
 function revealAll(){
 
     document
-    .getElementById("allPrizes")
-    .style.display = "block";
+        .getElementById("allPrizes")
+        .style.display =
+        "block";
 
 
     document
-    .getElementById("allPrizes")
-    .scrollIntoView({
-        behavior:"smooth"
-    });
+        .getElementById("allPrizes")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
 
 }
 
 </script>
 
 </body>
- </html>
+</html>
