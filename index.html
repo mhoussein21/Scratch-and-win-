@@ -1,12 +1,13 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Madobi Campus Gist - Spin & Win</title>
+<title>Madobi Campus Gist - Spin & Win #2</title>
 
 <style>
+
 *{
     box-sizing:border-box;
 }
@@ -52,9 +53,39 @@ body{
     margin-top:15px;
 }
 
-h1{
+.question-number{
+    display:inline-block;
+    background:#006b3c;
+    color:white;
+    padding:8px 18px;
+    border-radius:25px;
     font-size:22px;
-    margin:18px 0 10px;
+    font-weight:900;
+    margin-top:20px;
+}
+
+.question-title{
+    font-size:25px;
+    font-weight:900;
+    color:#006b3c;
+    margin:12px 0;
+}
+
+.question-subtitle{
+    font-size:17px;
+    font-weight:800;
+    margin-bottom:14px;
+}
+
+.question{
+    background:#fff;
+    padding:18px;
+    border-radius:16px;
+    border-left:6px solid #f5c542;
+    font-size:18px;
+    line-height:1.55;
+    font-weight:700;
+    box-shadow:0 4px 12px #0002;
 }
 
 .instruction{
@@ -62,6 +93,7 @@ h1{
     padding:12px;
     border-radius:12px;
     font-weight:bold;
+    margin-top:15px;
 }
 
 
@@ -76,14 +108,12 @@ h1{
     margin:30px auto 20px;
 }
 
-
-/* FIXED POINTER */
-
 .pointer{
     position:absolute;
-    z-index:20;
+    z-index:30;
     top:-12px;
     left:50%;
+
     transform:translateX(-50%);
 
     width:0;
@@ -96,9 +126,6 @@ h1{
     filter:drop-shadow(0 3px 3px #0006);
 }
 
-
-/* ROTATING WHEEL */
-
 .wheel{
     position:relative;
 
@@ -106,6 +133,7 @@ h1{
     height:320px;
 
     border-radius:50%;
+
     border:9px solid white;
 
     overflow:hidden;
@@ -125,7 +153,9 @@ h1{
 }
 
 
-/* OPTIONS */
+/* =========================
+   OPTIONS
+========================= */
 
 .option{
     position:absolute;
@@ -139,6 +169,7 @@ h1{
     transform-origin:50% 100%;
 
     display:flex;
+
     justify-content:center;
     align-items:center;
 
@@ -164,7 +195,7 @@ h1{
 }
 
 
-/* 1GB DATA */
+/* ANSWER LIVE QUESTION */
 
 .option2{
     transform:
@@ -201,6 +232,7 @@ h1{
 
 .center{
     position:absolute;
+
     z-index:10;
 
     width:70px;
@@ -212,7 +244,9 @@ h1{
     transform:translate(-50%,-50%);
 
     background:white;
+
     border:6px solid #006b3c;
+
     border-radius:50%;
 
     display:flex;
@@ -228,7 +262,9 @@ h1{
 }
 
 
-/* SPIN BUTTON */
+/* =========================
+   BUTTON
+========================= */
 
 .spin-button{
     border:none;
@@ -263,6 +299,7 @@ h1{
     background:white;
 
     margin-top:25px;
+
     padding:25px;
 
     border-radius:20px;
@@ -274,8 +311,16 @@ h1{
     color:#006b3c;
 }
 
+.winner-prize{
+    font-size:34px;
+    color:#006b3c;
+    font-weight:900;
+}
 
-/* VERIFICATION CODE */
+
+/* =========================
+   VERIFICATION
+========================= */
 
 .verification-box{
     background:#f1f1f1;
@@ -292,21 +337,27 @@ h1{
 
     margin-top:8px;
 
-    font-size:23px;
+    font-size:21px;
+
     font-weight:900;
 
-    letter-spacing:2px;
+    letter-spacing:1px;
 
     color:#006b3c;
+
+    word-break:break-all;
 }
 
 
-/* WHATSAPP */
+/* =========================
+   WHATSAPP
+========================= */
 
 .whatsapp{
     display:inline-block;
 
     background:#25D366;
+
     color:white;
 
     padding:15px 22px;
@@ -321,12 +372,15 @@ h1{
 }
 
 
-/* REVEAL BUTTON */
+/* =========================
+   REVEAL
+========================= */
 
 .reveal-button{
     border:none;
 
     background:#006b3c;
+
     color:white;
 
     padding:14px 24px;
@@ -341,7 +395,9 @@ h1{
 }
 
 
-/* ALL PRIZES */
+/* =========================
+   ALL PRIZES
+========================= */
 
 .prizes{
     display:grid;
@@ -385,12 +441,11 @@ h1{
 
 <body>
 
-
 <div class="container">
 
 
 <!-- =========================
-     MAIN SECTION
+     MAIN
 ========================= -->
 
 <div class="hero">
@@ -413,13 +468,37 @@ alt="Madobi Campus"
 >
 
 
-<h1>
-How many horses are there on the Nigerian Coat of Arms? 🇳🇬
-</h1>
+<div class="question-number">
+#2
+</div>
+
+
+<div class="question-title">
+YOU'RE SMART? 🧠
+</div>
+
+
+<div class="question-subtitle">
+Answer this little question 👇
+</div>
+
+
+<div class="question">
+
+Assume I'm understanding
+<b>Sign Language</b> 🤟
+
+<br><br>
+
+If you are <b>blind</b> and you want
+to ask me for <b>water</b>,
+how would you ask me?
+
+</div>
 
 
 <div class="instruction">
-👇 Spin the wheel and see where it stops!
+🎯 Answer the question, then spin to win!
 </div>
 
 
@@ -430,13 +509,8 @@ How many horses are there on the Nigerian Coat of Arms? 🇳🇬
 
 <div class="wheel-container">
 
-
-<!-- FIXED POINTER -->
-
 <div class="pointer"></div>
 
-
-<!-- ROTATING WHEEL -->
 
 <div
 id="wheel"
@@ -450,7 +524,8 @@ class="wheel"
 
 
 <div class="option option2">
-1GB DATA
+ANSWER<br>
+LIVE QUESTION
 </div>
 
 
@@ -510,13 +585,13 @@ The wheel has stopped!
 </p>
 
 
-<h1>
-🏆 ₦200
-</h1>
+<div class="winner-prize">
+🏆 ₦1,000
+</div>
 
 
 <p>
-You landed on the winning prize.
+You landed on the winning prize!
 </p>
 
 
@@ -530,19 +605,20 @@ Your verification code:
 id="viewerCode"
 class="verification-code"
 >
-MDB/MH/0IhN1
+MDB/MH/#2IhNC
 </span>
 
 </div>
 
 
 <p>
-Send this code to <b>Madobi Campus Gist</b>
+
+Send this code to
+<b>Madobi Campus Gist</b>
 on WhatsApp to claim your token.
+
 </p>
 
-
-<!-- WHATSAPP -->
 
 <a
 id="whatsappButton"
@@ -558,8 +634,6 @@ href="#"
 
 <br>
 
-
-<!-- REVEAL ALL -->
 
 <button
 class="reveal-button"
@@ -593,26 +667,46 @@ class="panel"
 
 
 <div class="prize">
-<strong>₦700</strong>
+
+<strong>
+₦1,000
+</strong>
+
 💰 Cash Prize
+
 </div>
 
 
 <div class="prize">
-<strong>❓</strong>
-₦100
+
+<strong>
+LIVE
+</strong>
+
+🎤 Answer Live Question
+
 </div>
 
 
 <div class="prize">
-<strong>₦500</strong>
+
+<strong>
+₦200
+</strong>
+
 🎁 Cash Prize
+
 </div>
 
 
 <div class="prize">
-<strong>2GB</strong>
-📱 Data Bonus
+
+<strong>
+❓
+</strong>
+
+Answer Another Question
+
 </div>
 
 
@@ -620,8 +714,10 @@ class="panel"
 
 
 <p class="small">
+
 Madobi Campus Gist •
 Stay Informed • Stay Connected
+
 </p>
 
 </div>
@@ -634,41 +730,49 @@ Stay Informed • Stay Connected
 <script>
 
 /* =========================
-   FIXED VERIFICATION CODE
+   VERIFICATION CODE
 ========================= */
 
-const viewerCode = "MDB/MH/0IhN1";
+const viewerCode =
+"MDB/MH/#2IhNC";
 
 
 document.getElementById(
-    "viewerCode"
-).textContent = viewerCode;
+"viewerCode"
+).textContent =
+viewerCode;
 
 
 
 /* =========================
-   WHATSAPP MESSAGE
+   WHATSAPP
 ========================= */
 
 const whatsappMessage =
-    "Hello Madobi Campus Gist 👋\n\n" +
-    "I participated in the Spin & Win game.\n\n" +
-    "My verification code is: " +
-    viewerCode;
+
+"Hello Madobi Campus Gist 👋\n\n" +
+
+"I participated in Spin & Win Question #2.\n\n" +
+
+"My verification code is: " +
+
+viewerCode;
 
 
 document.getElementById(
-    "whatsappButton"
+"whatsappButton"
 ).href =
-    "https://wa.me/2349040288121?text=" +
-    encodeURIComponent(
-        whatsappMessage
-    );
+
+"https://wa.me/2349040288121?text=" +
+
+encodeURIComponent(
+whatsappMessage
+);
 
 
 
 /* =========================
-   SPIN WHEEL
+   SPIN
 ========================= */
 
 let spinning = false;
@@ -685,52 +789,63 @@ function spinWheel(){
 
 
     document
-        .getElementById("spinButton")
-        .disabled = true;
+    .getElementById("spinButton")
+    .disabled = true;
 
 
     const wheel =
-        document.getElementById("wheel");
+    document.getElementById("wheel");
 
 
     /*
-       The four options rotate
-       together with the wheel.
-
-       ₦200 occupies the third
+       ₦1,000 is the first
        90-degree section.
 
-       Its center is at 225°.
+       Its center is 45°.
 
-       135° rotation brings the
-       center of ₦200 to the
-       fixed pointer at the top.
+       360° - 45° = 315°
+
+       Therefore the wheel makes
+       six complete rotations plus
+       315°.
+
+       Result:
+       ₦1,000 stops directly
+       underneath the fixed pointer.
     */
 
-    const fullSpins = 6 * 360;
+
+    const fullSpins =
+    6 * 360;
+
+
+    const winningAngle =
+    315;
+
 
     const finalAngle =
-        fullSpins + 135;
+    fullSpins +
+    winningAngle;
 
 
     wheel.style.transform =
-        "rotate(" +
-        finalAngle +
-        "deg)";
+    "rotate(" +
+    finalAngle +
+    "deg)";
 
 
     setTimeout(function(){
 
         document
-            .getElementById("winner")
-            .style.display = "block";
+        .getElementById("winner")
+        .style.display = "block";
 
 
         document
-            .getElementById("winner")
-            .scrollIntoView({
-                behavior:"smooth"
-            });
+        .getElementById("winner")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
 
     },5200);
 
@@ -739,26 +854,25 @@ function spinWheel(){
 
 
 /* =========================
-   REVEAL ALL PRIZES
+   REVEAL ALL
 ========================= */
 
 function revealAll(){
 
     document
-        .getElementById("allPrizes")
-        .style.display = "block";
+    .getElementById("allPrizes")
+    .style.display = "block";
 
 
     document
-        .getElementById("allPrizes")
-        .scrollIntoView({
-            behavior:"smooth"
-        });
+    .getElementById("allPrizes")
+    .scrollIntoView({
+        behavior:"smooth"
+    });
 
 }
 
 </script>
 
-
 </body>
-</html>
+ </html>
