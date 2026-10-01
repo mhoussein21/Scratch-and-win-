@@ -1,13 +1,12 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Madobi Campus Gist - Scratch & Win</title>
+<title>Madobi Campus Gist - Spin & Win</title>
 
 <style>
-
 *{
     box-sizing:border-box;
 }
@@ -15,154 +14,369 @@
 body{
     margin:0;
     font-family:Arial,sans-serif;
-    background:linear-gradient(135deg,#006b3c,#ffffff,#006b3c);
     min-height:100vh;
     text-align:center;
     color:#064d2b;
+    background:linear-gradient(135deg,#006b3c,#ffffff,#006b3c);
 }
 
 .container{
-    max-width:500px;
+    max-width:520px;
     margin:auto;
-    padding:20px 15px 40px;
+    padding:20px 15px 50px;
+}
+
+.hero{
+    background:#ffffffee;
+    padding:18px;
+    border-radius:22px;
+    box-shadow:0 8px 25px #0004;
 }
 
 .logo{
     font-size:28px;
     font-weight:900;
-    color:white;
-    text-shadow:2px 2px 5px #003d22;
+    color:#006b3c;
 }
 
 .subtitle{
-    color:white;
     font-weight:bold;
-    margin-bottom:20px;
+    margin-top:5px;
+}
+
+.campus{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:16px;
+    margin-top:15px;
 }
 
 h1{
-    background:white;
-    border-radius:15px;
-    padding:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,.2);
+    font-size:22px;
+    margin:18px 0 10px;
 }
 
 .instruction{
     background:white;
-    padding:15px;
+    padding:12px;
     border-radius:12px;
-    margin:15px 0;
     font-weight:bold;
 }
 
-/* SCRATCH CARDS */
 
-.scratch-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:15px;
-}
+/* =========================
+   WHEEL
+========================= */
 
-.card{
+.wheel-container{
     position:relative;
-    height:150px;
-    background:white;
-    border-radius:18px;
-    overflow:hidden;
-    box-shadow:0 6px 15px rgba(0,0,0,.25);
+    width:320px;
+    height:320px;
+    margin:30px auto 20px;
 }
 
-.prize{
+
+/* FIXED POINTER */
+
+.pointer{
     position:absolute;
-    inset:0;
+    z-index:20;
+    top:-12px;
+    left:50%;
+    transform:translateX(-50%);
+
+    width:0;
+    height:0;
+
+    border-left:18px solid transparent;
+    border-right:18px solid transparent;
+    border-top:38px solid #d71920;
+
+    filter:drop-shadow(0 3px 3px #0006);
+}
+
+
+/* ROTATING WHEEL */
+
+.wheel{
+    position:relative;
+
+    width:320px;
+    height:320px;
+
+    border-radius:50%;
+    border:9px solid white;
+
+    overflow:hidden;
+
+    box-shadow:0 8px 25px #0006;
+
+    background:
+        conic-gradient(
+            #006b3c 0deg 90deg,
+            #f5c542 90deg 180deg,
+            #ffffff 180deg 270deg,
+            #008f50 270deg 360deg
+        );
+
+    transition:
+        transform 5s cubic-bezier(.12,.72,.17,1);
+}
+
+
+/* OPTIONS */
+
+.option{
+    position:absolute;
+
+    width:50%;
+    height:50%;
+
+    left:25%;
+    top:0;
+
+    transform-origin:50% 100%;
+
     display:flex;
     justify-content:center;
     align-items:center;
-    flex-direction:column;
+
+    text-align:center;
+
+    font-size:17px;
+    font-weight:900;
+
+    text-shadow:1px 1px 3px #0005;
+
+    pointer-events:none;
 }
 
-.prize strong{
-    font-size:28px;
+
+/* ₦1,000 */
+
+.option1{
+    transform:
+        rotate(45deg)
+        translateY(-12px);
+
+    color:white;
+}
+
+
+/* 1GB DATA */
+
+.option2{
+    transform:
+        rotate(135deg)
+        translateY(-12px);
+
+    color:#064d2b;
+}
+
+
+/* ₦200 */
+
+.option3{
+    transform:
+        rotate(225deg)
+        translateY(-12px);
+
+    color:#064d2b;
+}
+
+
+/* ANOTHER QUESTION */
+
+.option4{
+    transform:
+        rotate(315deg)
+        translateY(-12px);
+
+    color:white;
+}
+
+
+/* CENTER */
+
+.center{
+    position:absolute;
+    z-index:10;
+
+    width:70px;
+    height:70px;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    background:white;
+    border:6px solid #006b3c;
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:13px;
+    font-weight:900;
+
+    color:#006b3c;
+
+    box-shadow:0 3px 10px #0004;
+}
+
+
+/* SPIN BUTTON */
+
+.spin-button{
+    border:none;
+
+    background:#006b3c;
+    color:white;
+
+    padding:16px 30px;
+
+    border-radius:35px;
+
+    font-size:18px;
+    font-weight:900;
+
+    cursor:pointer;
+
+    box-shadow:0 6px 15px #0004;
+}
+
+.spin-button:disabled{
+    opacity:.6;
+}
+
+
+/* =========================
+   RESULT
+========================= */
+
+.panel{
+    display:none;
+
+    background:white;
+
+    margin-top:25px;
+    padding:25px;
+
+    border-radius:20px;
+
+    box-shadow:0 7px 20px #0004;
+}
+
+.panel h2{
     color:#006b3c;
 }
 
-.prize span{
-    font-size:13px;
+
+/* VERIFICATION CODE */
+
+.verification-box{
+    background:#f1f1f1;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    margin:18px 0;
+}
+
+.verification-code{
+    display:block;
+
+    margin-top:8px;
+
+    font-size:23px;
+    font-weight:900;
+
+    letter-spacing:2px;
+
+    color:#006b3c;
+}
+
+
+/* WHATSAPP */
+
+.whatsapp{
+    display:inline-block;
+
+    background:#25D366;
+    color:white;
+
+    padding:15px 22px;
+
+    border-radius:30px;
+
+    text-decoration:none;
+
+    font-weight:900;
+
+    margin:5px;
+}
+
+
+/* REVEAL BUTTON */
+
+.reveal-button{
+    border:none;
+
+    background:#006b3c;
+    color:white;
+
+    padding:14px 24px;
+
+    border-radius:30px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
     margin-top:8px;
 }
 
-canvas{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
-    cursor:pointer;
-    touch-action:none;
-}
-
-/* WIN MESSAGE */
-
-#winner{
-    display:none;
-    background:white;
-    margin-top:25px;
-    padding:25px;
-    border-radius:20px;
-    box-shadow:0 6px 18px rgba(0,0,0,.25);
-}
-
-#winner h2{
-    color:#006b3c;
-}
-
-.reveal-btn{
-    border:none;
-    background:#006b3c;
-    color:white;
-    padding:15px 25px;
-    border-radius:30px;
-    font-size:16px;
-    font-weight:bold;
-    cursor:pointer;
-}
 
 /* ALL PRIZES */
 
-#allPrizes{
-    display:none;
-    margin-top:25px;
-    background:white;
-    padding:20px;
-    border-radius:20px;
-    box-shadow:0 6px 18px rgba(0,0,0,.25);
-}
-
-#allPrizes h2{
-    color:#006b3c;
-}
-
-.revealed{
+.prizes{
     display:grid;
+
     grid-template-columns:1fr 1fr;
+
     gap:12px;
-    margin-top:15px;
+
+    margin-top:18px;
 }
 
-.prize-box{
-    padding:20px 10px;
+.prize{
+    padding:20px 8px;
+
     border-radius:15px;
-    background:#f2f7f4;
+
+    background:#f3f8f5;
+
     border:2px solid #006b3c;
 }
 
-.prize-box strong{
+.prize strong{
     display:block;
-    font-size:23px;
+
+    font-size:22px;
+
     color:#006b3c;
+
+    margin-bottom:5px;
 }
 
-.prize-box span{
+.small{
     font-size:12px;
+    color:#666;
+    margin-top:18px;
 }
 
 </style>
@@ -171,391 +385,380 @@ canvas{
 
 <body>
 
+
 <div class="container">
 
-    <div class="logo">
-        MADOBI CAMPUS GIST
-    </div>
 
-    <div class="subtitle">
-        🎁 SCRATCH & WIN 🎁
-    </div>
+<!-- =========================
+     MAIN SECTION
+========================= -->
 
-    <h1>
-        🎉 PICK ONE & SCRATCH!
-    </h1>
-
-    <div class="instruction">
-        👆 Scratch ANY card to discover your prize.
-    </div>
+<div class="hero">
 
 
-    <!-- SCRATCH CARDS -->
-
-    <div class="scratch-grid">
-
-        <!-- CARD 1 -->
-        <div class="card">
-            <div class="prize">
-                <strong>₦200</strong>
-                <span>🎁 YOUR PRIZE</span>
-            </div>
-            <canvas></canvas>
-        </div>
+<div class="logo">
+MADOBI CAMPUS GIST
+</div>
 
 
-        <!-- CARD 2 -->
-        <div class="card">
-            <div class="prize">
-                <strong>₦200</strong>
-                <span>🎁 YOUR PRIZE</span>
-            </div>
-            <canvas></canvas>
-        </div>
+<div class="subtitle">
+🎡 SPIN & WIN 🎁
+</div>
 
 
-        <!-- CARD 3 -->
-        <div class="card">
-            <div class="prize">
-                <strong>₦200</strong>
-                <span>🎁 YOUR PRIZE</span>
-            </div>
-            <canvas></canvas>
-        </div>
+<img
+src="campus.jpg"
+class="campus"
+alt="Madobi Campus"
+>
 
 
-        <!-- CARD 4 -->
-        <div class="card">
-            <div class="prize">
-                <strong>₦200</strong>
-                <span>🎁 YOUR PRIZE</span>
-            </div>
-            <canvas></canvas>
-        </div>
-
-    </div>
+<h1>
+How many horses are there on the Nigerian Coat of Arms? 🇳🇬
+</h1>
 
 
-    <!-- WINNER MESSAGE -->
-
-    <div id="winner">
-
-        <h2>
-            🎊 CONGRATULATIONS!
-        </h2>
-
-        <p>
-            You scratched your card successfully!
-        </p>
-
-        <h2>
-            🏆 ₦200
-        </h2>
-
-        <p>
-            Your revealed prize is <b>₦200</b>.
-        </p>
-
-        <button
-            class="reveal-btn"
-            onclick="revealAll()">
-
-            🔓 REVEAL ALL PRIZES
-
-        </button>
-
-    </div>
+<div class="instruction">
+👇 Spin the wheel and see where it stops!
+</div>
 
 
-    <!-- ALL PRIZES -->
 
-    <div id="allPrizes">
+<!-- =========================
+     WHEEL
+========================= -->
 
-        <h2>
-            🎉 ALL PRIZES REVEALED!
-        </h2>
-
-        <p>
-            Here are the four possible prizes:
-        </p>
+<div class="wheel-container">
 
 
-        <div class="revealed">
+<!-- FIXED POINTER -->
 
-            <div class="prize-box">
-                <strong>₦1,000</strong>
-                <span>💰 CASH PRIZE</span>
-            </div>
+<div class="pointer"></div>
 
-            <div class="prize-box">
-                <strong>❓</strong>
-                <span>ANSWER ANOTHER QUESTION</span>
-            </div>
 
-            <div class="prize-box">
-                <strong>₦200</strong>
-                <span>🎁 CASH PRIZE</span>
-            </div>
+<!-- ROTATING WHEEL -->
 
-            <div class="prize-box">
-                <strong>1GB</strong>
-                <span>📱 DATA BONUS</span>
-            </div>
+<div
+id="wheel"
+class="wheel"
+>
 
-        </div>
 
-    </div>
+<div class="option option1">
+₦1,000
+</div>
+
+
+<div class="option option2">
+1GB DATA
+</div>
+
+
+<div class="option option3">
+₦200
+</div>
+
+
+<div class="option option4">
+❓<br>
+ANOTHER<br>
+QUESTION
+</div>
+
+
+<div class="center">
+SPIN
+</div>
+
+
+</div>
 
 </div>
 
 
+<button
+id="spinButton"
+class="spin-button"
+onclick="spinWheel()"
+>
+
+🎡 SPIN NOW
+
+</button>
+
+
+</div>
+
+
+
+<!-- =========================
+     WINNER
+========================= -->
+
+<div
+id="winner"
+class="panel"
+>
+
+<h2>
+🎊 CONGRATULATIONS!
+</h2>
+
+
+<p>
+The wheel has stopped!
+</p>
+
+
+<h1>
+🏆 ₦200
+</h1>
+
+
+<p>
+You landed on the winning prize.
+</p>
+
+
+<!-- VERIFICATION CODE -->
+
+<div class="verification-box">
+
+Your verification code:
+
+<span
+id="viewerCode"
+class="verification-code"
+>
+MDB/MH/0IhN1
+</span>
+
+</div>
+
+
+<p>
+Send this code to <b>Madobi Campus Gist</b>
+on WhatsApp to claim your token.
+</p>
+
+
+<!-- WHATSAPP -->
+
+<a
+id="whatsappButton"
+class="whatsapp"
+target="_blank"
+href="#"
+>
+
+💬 SEND CODE ON WHATSAPP
+
+</a>
+
+
+<br>
+
+
+<!-- REVEAL ALL -->
+
+<button
+class="reveal-button"
+onclick="revealAll()"
+>
+
+🔓 REVEAL ALL PRIZES
+
+</button>
+
+
+</div>
+
+
+
+<!-- =========================
+     ALL PRIZES
+========================= -->
+
+<div
+id="allPrizes"
+class="panel"
+>
+
+<h2>
+🎉 ALL PRIZES REVEALED!
+</h2>
+
+
+<div class="prizes">
+
+
+<div class="prize">
+<strong>₦700</strong>
+💰 Cash Prize
+</div>
+
+
+<div class="prize">
+<strong>❓</strong>
+₦100
+</div>
+
+
+<div class="prize">
+<strong>₦500</strong>
+🎁 Cash Prize
+</div>
+
+
+<div class="prize">
+<strong>2GB</strong>
+📱 Data Bonus
+</div>
+
+
+</div>
+
+
+<p class="small">
+Madobi Campus Gist •
+Stay Informed • Stay Connected
+</p>
+
+</div>
+
+
+</div>
+
+
+
 <script>
 
-const cards = document.querySelectorAll(".card");
+/* =========================
+   FIXED VERIFICATION CODE
+========================= */
 
-let gameFinished = false;
-
-
-/* ==========================
-   CREATE SCRATCH CARDS
-========================== */
-
-cards.forEach((card) => {
-
-    const canvas = card.querySelector("canvas");
-
-    const ctx = canvas.getContext("2d");
-
-    canvas.width = card.offsetWidth;
-    canvas.height = card.offsetHeight;
+const viewerCode = "MDB/MH/0IhN1";
 
 
-    /* Scratch coating */
+document.getElementById(
+    "viewerCode"
+).textContent = viewerCode;
 
-    ctx.fillStyle = "#777";
 
-    ctx.fillRect(
-        0,
-        0,
-        canvas.width,
-        canvas.height
+
+/* =========================
+   WHATSAPP MESSAGE
+========================= */
+
+const whatsappMessage =
+    "Hello Madobi Campus Gist 👋\n\n" +
+    "I participated in the Spin & Win game.\n\n" +
+    "My verification code is: " +
+    viewerCode;
+
+
+document.getElementById(
+    "whatsappButton"
+).href =
+    "https://wa.me/2349040288121?text=" +
+    encodeURIComponent(
+        whatsappMessage
     );
 
 
-    /* Scratch text */
 
-    ctx.fillStyle = "#ffffff";
+/* =========================
+   SPIN WHEEL
+========================= */
 
-    ctx.font = "bold 18px Arial";
-
-    ctx.textAlign = "center";
-
-    ctx.fillText(
-        "SCRATCH HERE",
-        canvas.width / 2,
-        canvas.height / 2
-    );
+let spinning = false;
 
 
-    let scratching = false;
+function spinWheel(){
 
-    let scratchCount = 0;
-
-
-    function scratch(e){
-
-        if(gameFinished) return;
-
-        e.preventDefault();
-
-        const rect =
-            canvas.getBoundingClientRect();
-
-
-        let x;
-        let y;
-
-
-        if(e.touches){
-
-            x =
-                e.touches[0].clientX -
-                rect.left;
-
-            y =
-                e.touches[0].clientY -
-                rect.top;
-
-        }else{
-
-            x =
-                e.clientX -
-                rect.left;
-
-            y =
-                e.clientY -
-                rect.top;
-
-        }
-
-
-        ctx.globalCompositeOperation =
-            "destination-out";
-
-
-        ctx.beginPath();
-
-        ctx.arc(
-            x,
-            y,
-            25,
-            0,
-            Math.PI * 2
-        );
-
-        ctx.fill();
-
-
-        scratchCount++;
-
-
-        /*
-          Once the player has scratched
-          enough, reveal ₦200.
-        */
-
-        if(scratchCount >= 15){
-
-            finishGame();
-
-        }
-
+    if(spinning){
+        return;
     }
 
 
-    canvas.addEventListener(
-        "mousedown",
-        () => scratching = true
-    );
+    spinning = true;
 
 
-    canvas.addEventListener(
-        "mouseup",
-        () => scratching = false
-    );
+    document
+        .getElementById("spinButton")
+        .disabled = true;
 
 
-    canvas.addEventListener(
-        "mousemove",
-        (e) => {
-
-            if(scratching){
-
-                scratch(e);
-
-            }
-
-        }
-    );
-
-
-    canvas.addEventListener(
-        "touchstart",
-        (e) => {
-
-            scratching = true;
-
-            scratch(e);
-
-        },
-        {passive:false}
-    );
-
-
-    canvas.addEventListener(
-        "touchmove",
-        (e) => {
-
-            if(scratching){
-
-                scratch(e);
-
-            }
-
-        },
-        {passive:false}
-    );
-
-
-    canvas.addEventListener(
-        "touchend",
-        () => scratching = false
-    );
-
-});
-
-
-/* ==========================
-   FINISH SCRATCH
-========================== */
-
-function finishGame(){
-
-    if(gameFinished) return;
-
-    gameFinished = true;
+    const wheel =
+        document.getElementById("wheel");
 
 
     /*
-      Remove scratch layers
-      from ALL cards.
+       The four options rotate
+       together with the wheel.
+
+       ₦200 occupies the third
+       90-degree section.
+
+       Its center is at 225°.
+
+       135° rotation brings the
+       center of ₦200 to the
+       fixed pointer at the top.
     */
 
-    cards.forEach(card => {
+    const fullSpins = 6 * 360;
 
-        const canvas =
-            card.querySelector("canvas");
-
-        canvas.style.display = "none";
-
-    });
+    const finalAngle =
+        fullSpins + 135;
 
 
-    /*
-      Show ₦200 result.
-    */
+    wheel.style.transform =
+        "rotate(" +
+        finalAngle +
+        "deg)";
 
-    document.getElementById("winner")
+
+    setTimeout(function(){
+
+        document
+            .getElementById("winner")
+            .style.display = "block";
+
+
+        document
+            .getElementById("winner")
+            .scrollIntoView({
+                behavior:"smooth"
+            });
+
+    },5200);
+
+}
+
+
+
+/* =========================
+   REVEAL ALL PRIZES
+========================= */
+
+function revealAll(){
+
+    document
+        .getElementById("allPrizes")
         .style.display = "block";
 
 
-    document.getElementById("winner")
+    document
+        .getElementById("allPrizes")
         .scrollIntoView({
             behavior:"smooth"
         });
 
 }
 
-
-/* ==========================
-   REVEAL ALL
-========================== */
-
-function revealAll(){
-
-    const all =
-        document.getElementById("allPrizes");
-
-    all.style.display = "block";
-
-
-    all.scrollIntoView({
-        behavior:"smooth"
-    });
-
-}
-
 </script>
+
 
 </body>
 </html>
