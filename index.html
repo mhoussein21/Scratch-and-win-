@@ -4,45 +4,79 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Madobi Campus Gist - Spin & Win #2</title>
+<title>Madobi Campus Gist - Friday Free Spin</title>
 
 <style>
+
 *{
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     margin:0;
-    font-family:Arial,sans-serif;
+    font-family:Arial, sans-serif;
     min-height:100vh;
     text-align:center;
     color:#064d2b;
-    background:linear-gradient(135deg,#006b3c,#ffffff,#006b3c);
+
+    /* FULL BACKGROUND IMAGE */
+    background:
+        linear-gradient(
+            rgba(0,107,60,0.62),
+            rgba(255,255,255,0.78)
+        ),
+        url("background.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+    background-repeat:no-repeat;
 }
 
 .container{
     max-width:520px;
     margin:auto;
-    padding:20px 15px 50px;
+    padding:20px 15px 60px;
 }
 
+
+/* =========================
+   MAIN CARD
+========================= */
+
 .hero{
-    background:#ffffffee;
+    background:rgba(255,255,255,0.94);
     padding:18px;
     border-radius:22px;
-    box-shadow:0 8px 25px #0004;
+    box-shadow:0 8px 25px rgba(0,0,0,0.30);
 }
+
+
+/* =========================
+   HEADER
+========================= */
 
 .logo{
     font-size:28px;
     font-weight:900;
     color:#006b3c;
+    letter-spacing:.5px;
 }
 
 .subtitle{
     font-weight:bold;
     margin-top:5px;
+    color:#333;
 }
+
+
+/* =========================
+   CAMPUS IMAGE
+========================= */
 
 .campus{
     width:100%;
@@ -50,49 +84,176 @@ body{
     object-fit:cover;
     border-radius:16px;
     margin-top:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,.20);
 }
+
+
+/* =========================
+   QUESTION HEADER
+========================= */
 
 .question-number{
     display:inline-block;
+
     background:#006b3c;
     color:white;
+
     padding:8px 18px;
+
     border-radius:25px;
+
     font-size:22px;
     font-weight:900;
+
     margin-top:20px;
 }
 
 .question-title{
-    font-size:25px;
+    font-size:27px;
     font-weight:900;
+
     color:#006b3c;
-    margin:12px 0;
+
+    margin:12px 0 5px;
 }
 
 .question-subtitle{
-    font-size:17px;
-    font-weight:800;
-    margin-bottom:14px;
+    font-size:18px;
+    font-weight:900;
+
+    margin-bottom:15px;
+
+    color:#444;
 }
+
+
+/* =========================
+   FRIDAY TASK
+========================= */
 
 .question{
     background:#fff;
-    padding:18px;
+
+    padding:20px 18px;
+
     border-radius:16px;
+
     border-left:6px solid #f5c542;
+
     font-size:18px;
-    line-height:1.55;
+
+    line-height:1.65;
+
     font-weight:700;
-    box-shadow:0 4px 12px #0002;
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,.12);
 }
 
-.instruction{
-    background:white;
-    padding:12px;
-    border-radius:12px;
+.arabic{
+    font-size:25px;
+
+    direction:rtl;
+
+    color:#006b3c;
+
+    margin:16px 0;
+
     font-weight:bold;
+}
+
+
+/* =========================
+   INSTRUCTION
+========================= */
+
+.instruction{
+    background:#f7fff9;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    font-weight:bold;
+
     margin-top:15px;
+
+    border:1px solid #b7d8c4;
+}
+
+
+/* =========================
+   ACCESS BOX
+========================= */
+
+.access-box{
+    background:#f8fff9;
+
+    border:2px solid #006b3c;
+
+    padding:18px;
+
+    border-radius:16px;
+
+    margin-top:22px;
+}
+
+.access-box h3{
+    margin-top:0;
+
+    color:#006b3c;
+}
+
+.access-input{
+    width:100%;
+
+    padding:14px;
+
+    border:2px solid #ccc;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+    text-align:center;
+
+    outline:none;
+}
+
+.access-input:focus{
+    border-color:#006b3c;
+}
+
+.verify-button{
+    margin-top:10px;
+
+    border:none;
+
+    background:#006b3c;
+
+    color:white;
+
+    padding:13px 25px;
+
+    border-radius:25px;
+
+    font-weight:900;
+
+    cursor:pointer;
+}
+
+.verify-button:disabled{
+    opacity:.5;
+
+    cursor:not-allowed;
+}
+
+.access-message{
+    font-weight:bold;
+
+    margin-bottom:0;
+
+    min-height:20px;
 }
 
 
@@ -102,16 +263,24 @@ body{
 
 .wheel-container{
     position:relative;
+
     width:320px;
     height:320px;
+
+    max-width:100%;
+
     margin:30px auto 20px;
 }
 
 .pointer{
     position:absolute;
+
     z-index:30;
+
     top:-12px;
+
     left:50%;
+
     transform:translateX(-50%);
 
     width:0;
@@ -121,19 +290,26 @@ body{
     border-right:18px solid transparent;
     border-top:38px solid #d71920;
 
-    filter:drop-shadow(0 3px 3px #0006);
+    filter:
+        drop-shadow(0 3px 3px rgba(0,0,0,.4));
 }
 
 .wheel{
     position:relative;
+
     width:320px;
     height:320px;
 
+    max-width:100%;
+
     border-radius:50%;
+
     border:9px solid white;
+
     overflow:hidden;
 
-    box-shadow:0 8px 25px #0006;
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.4);
 
     background:
         conic-gradient(
@@ -149,7 +325,7 @@ body{
 
 
 /* =========================
-   OPTIONS
+   WHEEL OPTIONS
 ========================= */
 
 .option{
@@ -164,21 +340,25 @@ body{
     transform-origin:50% 100%;
 
     display:flex;
+
     justify-content:center;
+
     align-items:center;
 
     text-align:center;
 
-    font-size:17px;
+    font-size:18px;
+
     font-weight:900;
 
-    text-shadow:1px 1px 3px #0005;
+    text-shadow:
+        1px 1px 3px rgba(0,0,0,.35);
 
     pointer-events:none;
 }
 
 
-/* ₦1,000 */
+/* Answer Live question */
 
 .option1{
     transform:
@@ -189,7 +369,7 @@ body{
 }
 
 
-/* ANSWER LIVE QUESTION */
+/* 2GB DATA */
 
 .option2{
     transform:
@@ -200,7 +380,7 @@ body{
 }
 
 
-/* ₦200 */
+/* ₦700 */
 
 .option3{
     transform:
@@ -211,7 +391,7 @@ body{
 }
 
 
-/* ANOTHER QUESTION */
+/* ₦1,000 */
 
 .option4{
     transform:
@@ -222,10 +402,13 @@ body{
 }
 
 
-/* CENTER */
+/* =========================
+   CENTER
+========================= */
 
 .center{
     position:absolute;
+
     z-index:10;
 
     width:70px;
@@ -234,22 +417,29 @@ body{
     left:50%;
     top:50%;
 
-    transform:translate(-50%,-50%);
+    transform:
+        translate(-50%,-50%);
 
     background:white;
+
     border:6px solid #006b3c;
+
     border-radius:50%;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
     font-size:13px;
+
     font-weight:900;
 
     color:#006b3c;
 
-    box-shadow:0 3px 10px #0004;
+    box-shadow:
+        0 3px 10px rgba(0,0,0,.25);
 }
 
 
@@ -261,6 +451,7 @@ body{
     border:none;
 
     background:#006b3c;
+
     color:white;
 
     padding:16px 30px;
@@ -268,33 +459,45 @@ body{
     border-radius:35px;
 
     font-size:18px;
+
     font-weight:900;
 
     cursor:pointer;
 
-    box-shadow:0 6px 15px #0004;
+    box-shadow:
+        0 6px 15px rgba(0,0,0,.25);
+
+    transition:.2s;
+}
+
+.spin-button:active{
+    transform:scale(.96);
 }
 
 .spin-button:disabled{
-    opacity:.6;
+    opacity:.45;
+
+    cursor:not-allowed;
 }
 
 
 /* =========================
-   RESULT
+   RESULT PANEL
 ========================= */
 
 .panel{
     display:none;
 
-    background:white;
+    background:rgba(255,255,255,.97);
 
     margin-top:25px;
+
     padding:25px;
 
     border-radius:20px;
 
-    box-shadow:0 7px 20px #0004;
+    box-shadow:
+        0 7px 20px rgba(0,0,0,.3);
 }
 
 .panel h2{
@@ -302,8 +505,10 @@ body{
 }
 
 .winner-prize{
-    font-size:34px;
+    font-size:38px;
+
     color:#006b3c;
+
     font-weight:900;
 }
 
@@ -359,11 +564,14 @@ body{
     font-weight:900;
 
     margin:5px;
+
+    box-shadow:
+        0 4px 10px rgba(0,0,0,.18);
 }
 
 
 /* =========================
-   REVEAL
+   REVEAL BUTTON
 ========================= */
 
 .reveal-button{
@@ -412,7 +620,7 @@ body{
 .prize strong{
     display:block;
 
-    font-size:20px;
+    font-size:21px;
 
     color:#006b3c;
 
@@ -421,8 +629,36 @@ body{
 
 .small{
     font-size:12px;
+
     color:#666;
+
     margin-top:18px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:360px){
+
+    .wheel-container,
+    .wheel{
+        width:280px;
+        height:280px;
+    }
+
+    .option{
+        font-size:15px;
+    }
+
+    .question-title{
+        font-size:23px;
+    }
+
+    .winner-prize{
+        font-size:32px;
+    }
 }
 
 </style>
@@ -435,18 +671,21 @@ body{
 
 
 <!-- =========================
-     MAIN SECTION
+     MAIN CARD
 ========================= -->
 
 <div class="hero">
+
 
 <div class="logo">
 MADOBI CAMPUS GIST
 </div>
 
+
 <div class="subtitle">
 🎡 SPIN & WIN 🎁
 </div>
+
 
 <img
 src="campus.jpg"
@@ -455,46 +694,108 @@ alt="Madobi Campus"
 >
 
 
+<!-- =========================
+     FRIDAY FREE SPIN
+========================= -->
+
 <div class="question-number">
 #2
 </div>
 
 
 <div class="question-title">
-YOU'RE SMART? 🧠
+FRIDAY FREE SPIN 🌙✨
 </div>
 
 
 <div class="question-subtitle">
-Answer this little question 👇
+3 LUCKY STUDENTS 🎁
 </div>
-
-
-<div class="question">
-
-Assume I'm understanding
-<b>Sign Language</b> 🤟
-
-<br><br>
-
-If you are <b>blind</b> and you want
-to ask me for <b>water</b>,
-how would you ask me?
-
-</div>
-
-
-<div class="instruction">
-🎯 Answer the question, then spin to win!
-</div>
-
 
 
 <!-- =========================
-     WHEEL
+     ISLAMIC TASK
+========================= -->
+
+<div class="question">
+
+🌙 <b>Friday Reminder</b> ✨
+
+<br><br>
+
+Send abundant
+<b>Salawat</b>
+upon Prophet Muhammad ﷺ today.
+
+<div class="arabic">
+اللهم صل وسلم على نبينا محمد
+</div>
+
+🤍 May Allah increase our love
+for Prophet Muhammad ﷺ and bless
+us on this blessed day.
+
+</div>
+
+
+<!-- INSTRUCTION -->
+
+<div class="instruction">
+
+✅ <b>Completed the task above?</b>
+
+<br>
+
+Enter your access code below to spin!
+
+</div>
+
+
+<!-- =========================
+     ACCESS CODE
+========================= -->
+
+<div class="access-box">
+
+<h3>
+🔐 ENTER ACCESS CODE
+</h3>
+
+
+<input
+id="accessCode"
+class="access-input"
+type="text"
+placeholder="Enter your access code"
+autocomplete="off"
+>
+
+
+<button
+id="verifyButton"
+class="verify-button"
+onclick="verifyAccess()"
+>
+
+🔓 VERIFY ACCESS
+
+</button>
+
+
+<p
+id="accessMessage"
+class="access-message"
+></p>
+
+</div>
+
+
+<!-- =========================
+     SPIN WHEEL
 ========================= -->
 
 <div class="wheel-container">
+
 
 <div class="pointer"></div>
 
@@ -506,25 +807,23 @@ class="wheel"
 
 
 <div class="option option1">
-₦1,000
+₦300
 </div>
 
 
 <div class="option option2">
-ANSWER<br>
-LIVE QUESTION
+2GB<br>
+DATA
 </div>
 
 
 <div class="option option3">
-₦200
+₦700
 </div>
 
 
 <div class="option option4">
-❓<br>
-ANOTHER<br>
-QUESTION
+₦1,000
 </div>
 
 
@@ -542,11 +841,13 @@ SPIN
 id="spinButton"
 class="spin-button"
 onclick="spinWheel()"
+disabled
 >
 
 🎡 SPIN NOW
 
 </button>
+
 
 </div>
 
@@ -561,6 +862,7 @@ id="winner"
 class="panel"
 >
 
+
 <h2>
 🎊 CONGRATULATIONS!
 </h2>
@@ -572,12 +874,12 @@ The wheel has stopped!
 
 
 <div class="winner-prize">
-🏆 ₦1,000
+🏆 ₦300
 </div>
 
 
 <p>
-You landed on <b>₦1,000</b>!
+You landed on <b>₦300</b>!
 </p>
 
 
@@ -596,9 +898,11 @@ MDB/MH/#2IhNC
 
 
 <p>
-Send this message to
+
+Send the message below to
 <b>Madobi Campus Gist</b>
 on WhatsApp.
+
 </p>
 
 
@@ -609,7 +913,7 @@ target="_blank"
 href="#"
 >
 
-💬 SEND CODE ON WHATSAPP
+💬 SEND RESULT ON WHATSAPP
 
 </a>
 
@@ -626,6 +930,7 @@ onclick="revealAll()"
 
 </button>
 
+
 </div>
 
 
@@ -639,6 +944,7 @@ id="allPrizes"
 class="panel"
 >
 
+
 <h2>
 🎉 ALL PRIZES REVEALED!
 </h2>
@@ -650,7 +956,7 @@ class="panel"
 <div class="prize">
 
 <strong>
-₦1,000
+₦300
 </strong>
 
 💰 Cash Prize
@@ -661,10 +967,10 @@ class="panel"
 <div class="prize">
 
 <strong>
-LIVE
+2GB
 </strong>
 
-🎤 Answer Live Question
+📶 Data
 
 </div>
 
@@ -672,10 +978,10 @@ LIVE
 <div class="prize">
 
 <strong>
-₦200
+₦700
 </strong>
 
-🎁 Cash Prize
+💰 Cash Prize
 
 </div>
 
@@ -683,10 +989,10 @@ LIVE
 <div class="prize">
 
 <strong>
-❓
+₦1,000
 </strong>
 
-Answer Another Question
+💵 Cash Prize
 
 </div>
 
@@ -701,7 +1007,9 @@ Stay Informed • Stay Connected
 
 </p>
 
+
 </div>
+
 
 </div>
 
@@ -709,89 +1017,174 @@ Stay Informed • Stay Connected
 
 <script>
 
-/* =========================
-   VERIFICATION CODE
-========================= */
+/* =================================
+   ACCESS CODE
+================================= */
 
-const viewerCode =
-"MDB/MH/#2IhNC";
+const ACCESS_CODE =
+    "MDB-SPIN-2026";
 
-
-document.getElementById(
-"viewerCode"
-).textContent =
-viewerCode;
-
-
-
-/* =========================
-   WHATSAPP MESSAGE
-========================= */
-
-const whatsappMessage =
-`Hello Madobi Campus Gist 👋
-
-I participated in Spin & Win Question #2.
-
-My verification code is: MDB/MH/#2IhNC
-
-And my spin stop at ₦1,000`;
-
-
-document.getElementById(
-"whatsappButton"
-).href =
-"https://wa.me/2349040288121?text=" +
-encodeURIComponent(
-whatsappMessage
-);
-
-
-
-/* =========================
-   SPIN WHEEL
-========================= */
+let accessGranted = false;
 
 let spinning = false;
 
 
+/* =================================
+   VERIFY ACCESS
+================================= */
+
+function verifyAccess(){
+
+    const input =
+        document.getElementById(
+            "accessCode"
+        );
+
+    const message =
+        document.getElementById(
+            "accessMessage"
+        );
+
+    const verifyButton =
+        document.getElementById(
+            "verifyButton"
+        );
+
+    const enteredCode =
+        input.value.trim();
+
+
+    if(
+        enteredCode ===
+        ACCESS_CODE
+    ){
+
+        accessGranted = true;
+
+
+        message.textContent =
+            "✅ Access granted! You can now spin.";
+
+
+        message.style.color =
+            "#008f50";
+
+
+        input.disabled = true;
+
+
+        verifyButton.disabled =
+            true;
+
+
+        document.getElementById(
+            "spinButton"
+        ).disabled = false;
+
+
+    }else{
+
+        accessGranted = false;
+
+
+        message.textContent =
+            "❌ Invalid access code. Please try again.";
+
+
+        message.style.color =
+            "#d71920";
+
+
+        document.getElementById(
+            "spinButton"
+        ).disabled = true;
+
+    }
+
+}
+
+
+/* =================================
+   VIEWER VERIFICATION CODE
+================================= */
+
+const viewerCode =
+    "MDB/MH/#2IhNC";
+
+
+document.getElementById(
+    "viewerCode"
+).textContent =
+    viewerCode;
+
+
+/* =================================
+   WHATSAPP MESSAGE
+================================= */
+
+const whatsappMessage =
+`Hello Madobi Campus Gist 👋
+
+I participated in Friday Free Spin.
+
+My verification code is: MDB/MH/#3IhBn
+
+And my spin stop at live question`;
+
+
+document.getElementById(
+    "whatsappButton"
+).href =
+    "https://wa.me/2349040288121?text=" +
+    encodeURIComponent(
+        whatsappMessage
+    );
+
+
+/* =================================
+   SPIN WHEEL
+================================= */
+
 function spinWheel(){
 
-    if(spinning){
+    if(
+        !accessGranted ||
+        spinning
+    ){
+
         return;
+
     }
 
 
     spinning = true;
 
 
-    document
-        .getElementById("spinButton")
-        .disabled = true;
+    document.getElementById(
+        "spinButton"
+    ).disabled = true;
 
 
     const wheel =
-        document.getElementById("wheel");
+        document.getElementById(
+            "wheel"
+        );
 
 
     /*
-       ₦1,000 is the FIRST section.
+       ₦300 is the FIRST section.
 
-       The center of the ₦1,000
-       section is at 45°.
+       Center = 45°
 
-       The fixed pointer is at 0°.
-
-       Therefore:
+       Pointer = 0°
 
        360° - 45° = 315°
 
-       We add six complete rotations
-       for the spinning effect.
-
-       Final result:
-       ₦1,000 stops under the pointer.
+       Six full rotations +
+       315° makes ₦300 stop
+       under the pointer.
     */
+
 
     const fullSpins =
         6 * 360;
@@ -812,50 +1205,73 @@ function spinWheel(){
         "deg)";
 
 
-    /*
-       Wait for the 5-second
-       wheel animation to finish.
-    */
-
     setTimeout(function(){
 
-        document
-            .getElementById("winner")
-            .style.display =
+
+        document.getElementById(
+            "winner"
+        ).style.display =
             "block";
 
 
-        document
-            .getElementById("winner")
-            .scrollIntoView({
-                behavior:"smooth"
-            });
+        document.getElementById(
+            "winner"
+        ).scrollIntoView({
+
+            behavior:"smooth"
+
+        });
+
 
     },5200);
 
 }
 
 
-
-/* =========================
+/* =================================
    REVEAL ALL PRIZES
-========================= */
+================================= */
 
 function revealAll(){
 
-    document
-        .getElementById("allPrizes")
-        .style.display =
+    document.getElementById(
+        "allPrizes"
+    ).style.display =
         "block";
 
 
-    document
-        .getElementById("allPrizes")
-        .scrollIntoView({
-            behavior:"smooth"
-        });
+    document.getElementById(
+        "allPrizes"
+    ).scrollIntoView({
+
+        behavior:"smooth"
+
+    });
 
 }
+
+
+/* =================================
+   ENTER KEY SUPPORT
+================================= */
+
+document.getElementById(
+    "accessCode"
+).addEventListener(
+    "keydown",
+    function(event){
+
+        if(
+            event.key ===
+            "Enter"
+        ){
+
+            verifyAccess();
+
+        }
+
+    }
+);
 
 </script>
 
