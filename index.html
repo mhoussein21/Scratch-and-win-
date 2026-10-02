@@ -7,7 +7,6 @@
 <title>Madobi Campus Gist - Friday Free Spin</title>
 
 <style>
-
 *{
     box-sizing:border-box;
 }
@@ -166,9 +165,7 @@ body{
     min-height:20px;
 }
 
-/* =========================
-   WHEEL
-========================= */
+/* WHEEL */
 
 .wheel-container{
     position:relative;
@@ -197,6 +194,7 @@ body{
 
 .wheel{
     position:relative;
+
     width:320px;
     height:320px;
     max-width:100%;
@@ -245,34 +243,22 @@ body{
 }
 
 .option1{
-    transform:
-        rotate(45deg)
-        translateY(-12px);
-
+    transform:rotate(45deg) translateY(-12px);
     color:white;
 }
 
 .option2{
-    transform:
-        rotate(135deg)
-        translateY(-12px);
-
+    transform:rotate(135deg) translateY(-12px);
     color:#064d2b;
 }
 
 .option3{
-    transform:
-        rotate(225deg)
-        translateY(-12px);
-
+    transform:rotate(225deg) translateY(-12px);
     color:#064d2b;
 }
 
 .option4{
-    transform:
-        rotate(315deg)
-        translateY(-12px);
-
+    transform:rotate(315deg) translateY(-12px);
     color:white;
 }
 
@@ -305,13 +291,10 @@ body{
     box-shadow:0 3px 10px rgba(0,0,0,.25);
 }
 
-/* =========================
-   SPIN BUTTON
-========================= */
+/* SPIN BUTTON */
 
 .spin-button{
     border:none;
-
     background:#006b3c;
     color:white;
 
@@ -325,12 +308,6 @@ body{
     cursor:pointer;
 
     box-shadow:0 6px 15px rgba(0,0,0,.25);
-
-    transition:.2s;
-}
-
-.spin-button:active{
-    transform:scale(.96);
 }
 
 .spin-button:disabled{
@@ -338,9 +315,7 @@ body{
     cursor:not-allowed;
 }
 
-/* =========================
-   RESULT
-========================= */
+/* RESULT */
 
 .panel{
     display:none;
@@ -360,7 +335,7 @@ body{
 }
 
 .winner-prize{
-    font-size:38px;
+    font-size:30px;
     color:#006b3c;
     font-weight:900;
 }
@@ -380,9 +355,7 @@ body{
     font-weight:900;
 
     letter-spacing:1px;
-
     color:#006b3c;
-
     word-break:break-all;
 }
 
@@ -424,31 +397,22 @@ body{
 
 .prizes{
     display:grid;
-
     grid-template-columns:1fr 1fr;
-
     gap:12px;
-
     margin-top:18px;
 }
 
 .prize{
     padding:20px 8px;
-
     border-radius:15px;
-
     background:#f3f8f5;
-
     border:2px solid #006b3c;
 }
 
 .prize strong{
     display:block;
-
     font-size:21px;
-
     color:#006b3c;
-
     margin-bottom:5px;
 }
 
@@ -475,10 +439,9 @@ body{
     }
 
     .winner-prize{
-        font-size:32px;
+        font-size:27px;
     }
 }
-
 </style>
 </head>
 
@@ -502,8 +465,6 @@ class="campus"
 alt="Madobi Campus"
 >
 
-<!-- QUESTION -->
-
 <div class="question-number">
 #3
 </div>
@@ -515,8 +476,6 @@ FRIDAY FREE SPIN 🌙✨
 <div class="question-subtitle">
 3 LUCKY STUDENTS 🎁
 </div>
-
-<!-- FRIDAY TASK -->
 
 <div class="question">
 
@@ -547,8 +506,6 @@ us on this blessed day.
 Enter your access code below to spin!
 
 </div>
-
-<!-- ACCESS -->
 
 <div class="access-box">
 
@@ -587,10 +544,7 @@ class="access-message"
 
 <div class="pointer"></div>
 
-<div
-id="wheel"
-class="wheel"
->
+<div id="wheel" class="wheel">
 
 <div class="option option1">
 ₦300
@@ -649,11 +603,12 @@ The wheel has stopped automatically!
 </p>
 
 <div class="winner-prize">
-🏆 ANSWER LIVE QUESTION 
+🎤 ANSWER LIVE QUESTION
 </div>
 
 <p>
-You landed on <b>ANSWER LIVE QUESTION</b>!
+Your spin stopped at
+<b>ANSWER LIVE QUESTION</b>.
 </p>
 
 <div class="verification-box">
@@ -664,7 +619,7 @@ Your verification code:
 id="viewerCode"
 class="verification-code"
 >
-MDB/MH/#3IhSn
+MDB/MH/#2IhNC
 </span>
 
 </div>
@@ -714,52 +669,29 @@ class="panel"
 <div class="prizes">
 
 <div class="prize">
-
-<strong>
-₦300
-</strong>
-
+<strong>₦300</strong>
 💰 Cash Prize
-
 </div>
 
 <div class="prize">
-
-<strong>
-2GB
-</strong>
-
+<strong>2GB</strong>
 📶 Data
-
 </div>
 
 <div class="prize">
-
-<strong>
-₦700
-</strong>
-
+<strong>₦700</strong>
 💰 Cash Prize
-
 </div>
 
 <div class="prize">
-
-<strong>
-ANSWER LIVE QUESTION
-</strong>
-
+<strong>ANSWER LIVE QUESTION</strong>
 🎤 Live Question
-
 </div>
 
 </div>
 
 <p class="small">
-
-Madobi Campus Gist •
-Stay Informed • Stay Connected
-
+Madobi Campus Gist • Stay Informed • Stay Connected
 </p>
 
 </div>
@@ -773,11 +705,9 @@ Stay Informed • Stay Connected
    ACCESS CODE
 ========================= */
 
-const ACCESS_CODE =
-    "MDB-SPIN-2026";
+const ACCESS_CODE = "MSSN#2MDB";
 
 let accessGranted = false;
-
 let spinning = false;
 
 
@@ -788,28 +718,19 @@ let spinning = false;
 function verifyAccess(){
 
     const input =
-        document.getElementById(
-            "accessCode"
-        );
+        document.getElementById("accessCode");
 
     const message =
-        document.getElementById(
-            "accessMessage"
-        );
+        document.getElementById("accessMessage");
 
     const verifyButton =
-        document.getElementById(
-            "verifyButton"
-        );
+        document.getElementById("verifyButton");
 
     const enteredCode =
         input.value.trim();
 
 
-    if(
-        enteredCode ===
-        ACCESS_CODE
-    ){
+    if(enteredCode === ACCESS_CODE){
 
         accessGranted = true;
 
@@ -840,9 +761,7 @@ function verifyAccess(){
         document.getElementById(
             "spinButton"
         ).disabled = true;
-
     }
-
 }
 
 
@@ -855,12 +774,11 @@ const viewerCode =
 
 document.getElementById(
     "viewerCode"
-).textContent =
-    viewerCode;
+).textContent = viewerCode;
 
 
 /* =========================
-   WHATSAPP
+   WHATSAPP MESSAGE
 ========================= */
 
 const whatsappMessage =
@@ -870,7 +788,7 @@ I participated in Friday Free Spin Question #3.
 
 My verification code is: MDB/MH/#2IhNC
 
-And my spin stop at 'ANSWER LIVE QUESTION'`;
+And my spin stop at ANSWER LIVE QUESTION`;
 
 
 document.getElementById(
@@ -883,24 +801,19 @@ document.getElementById(
 
 
 /* =========================
-   SPIN
+   SPIN WHEEL
 ========================= */
 
 function spinWheel(){
 
-    if(
-        !accessGranted ||
-        spinning
-    ){
+    if(!accessGranted || spinning){
         return;
     }
 
     spinning = true;
 
     const spinButton =
-        document.getElementById(
-            "spinButton"
-        );
+        document.getElementById("spinButton");
 
     spinButton.disabled = true;
 
@@ -909,36 +822,34 @@ function spinWheel(){
 
 
     const wheel =
-        document.getElementById(
-            "wheel"
-        );
+        document.getElementById("wheel");
 
 
     /*
-       ₦300 is the first section.
+       ANSWER LIVE QUESTION
+       is the 4th option.
 
-       Its center is 45°.
+       Its center position is 315°.
 
-       Pointer is at 0°.
+       The pointer is at 0°.
 
-       Therefore:
+       Required rotation:
 
-       360 - 45 = 315°
+       360° - 315° = 45°
 
-       Six full rotations +
-       315° makes ₦300 stop
-       exactly under the pointer.
+       Six complete rotations
+       + 45° = 2205°
+
+       Therefore the wheel automatically
+       stops at ANSWER LIVE QUESTION.
     */
 
-    const fullSpins =
-        6 * 360;
+    const fullSpins = 6 * 360;
 
-    const winningAngle =
-        315;
+    const winningAngle = 45;
 
     const finalAngle =
-        fullSpins +
-        winningAngle;
+        fullSpins + winningAngle;
 
 
     wheel.style.transform =
@@ -947,19 +858,14 @@ function spinWheel(){
         "deg)";
 
 
-    /* AUTOMATIC STOP */
-
     setTimeout(function(){
 
         spinButton.textContent =
             "✅ SPIN COMPLETED";
 
-
         document.getElementById(
             "winner"
-        ).style.display =
-            "block";
-
+        ).style.display = "block";
 
         document.getElementById(
             "winner"
@@ -973,23 +879,20 @@ function spinWheel(){
 
 
 /* =========================
-   REVEAL ALL
+   REVEAL ALL PRIZES
 ========================= */
 
 function revealAll(){
 
     document.getElementById(
         "allPrizes"
-    ).style.display =
-        "block";
-
+    ).style.display = "block";
 
     document.getElementById(
         "allPrizes"
     ).scrollIntoView({
         behavior:"smooth"
     });
-
 }
 
 
@@ -1003,12 +906,8 @@ document.getElementById(
     "keydown",
     function(event){
 
-        if(
-            event.key === "Enter"
-        ){
-
+        if(event.key === "Enter"){
             verifyAccess();
-
         }
 
     }
